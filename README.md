@@ -15,10 +15,10 @@ Prefixed Asynchronous test helpers as a category on SenTestCase and XCTestCase
 
 
 
-API
+Navigation
 ----------
-#### [EXAMPLES](https://github.com/PodFactory/SHTestCaseAdditions#examples-1)
-#### [API](https://github.com/PodFactory/SHTestCaseAdditions#api-1)
+#### [EXAMPLES](https://github.com/seivan/SHTestCaseAdditions#examples-1)
+#### [API](https://github.com/seivan/SHTestCaseAdditions#api-1)
 
 
 
@@ -44,15 +44,62 @@ or
 #import "SHTestCaseAdditions.h"
 ```
 
+EXAMPLES
+-----
+
+```objective-c
+-(void)testSH_runLoopUntilTestPassesWithBlock_withTimeOut; {
+  NSString * keyPath = @"sampleSet";
+  __block BOOL didPass = NO;
+
+  [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
+    didPass = YES;
+  }];
+
+  double delayInSeconds = 2;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [[self mutableSetValueForKey:keyPath] addObject:@"Lol"];
+  });
+
+  
+  [self SH_runLoopUntilTestPassesWithBlock:^BOOL{
+    return didPass;
+  } withTimeOut:5];
+  
+  
+  STAssertTrue(didPass, nil);
+  
+}
+
+-(void)testSH_performAsyncTestsWithinBlock_withTimeout; {
+  NSString * keyPath = @"sampleArray";
+  __block BOOL didPass = NO;
+  [self SH_performAsyncTestsWithinBlock:^(BOOL *didFinish) {
+    
+    [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
+      didPass = YES;
+      *didFinish = YES;
+    }];
+    
+    double delayInSeconds = 2;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+      [[self mutableArrayValueForKey:keyPath] addObject:@"Lol"];
+    });
+    
+  } withTimeout:5];
+  
+  STAssertTrue(didPass, nil);
+  
+}
+
+```
 
 API
 -----
 
 ```objective-c
-
-
-
-
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 70000 || __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
 @interface XCTestCase (SHTestCaseAdditions)
 #else
