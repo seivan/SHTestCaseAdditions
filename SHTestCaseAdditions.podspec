@@ -2,10 +2,10 @@ Pod::Spec.new do |s|
   name           = "SHTestCaseAdditions"
   url            = "https://github.com/seivan/#{name}"
   git_url        = "#{url}.git"
-  s.name         = name
   version        = "1.0.0"
   source_files   = "#{name}/**/*.{h,m}"
-
+  
+  s.name         = name
   s.version      = version
   s.summary      = "Prefixed category on SenTestCase and XCTestCase to help with asynchronous callbacks."
   s.description  = <<-DESC
