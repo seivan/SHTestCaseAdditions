@@ -5,7 +5,7 @@ SHTestCaseAdditions
 
 Overview
 --------
-SHTestCaseAdditions contains asynchronous helpers (as a prefixed category) to write tests in SentTest and/or XCTest for delayed callbacks, like network calls or alert views, action sheets. Prefixed category on SenTestCase and XCTestCase.
+Prefixed Asynchronous test helpers as a category on SenTestCase and XCTestCase
 
 * Swizzle and junk free
 * Prefixed selectors.
@@ -14,10 +14,11 @@ SHTestCaseAdditions contains asynchronous helpers (as a prefixed category) to wr
 * Comes with tests and example. 
 
 
+
 API
 ----------
-
-#### [SHTestCaseAdditions](https://github.com/PodFactory/SHTestCaseAdditions#api-1)
+#### [EXAMPLES](https://github.com/PodFactory/SHTestCaseAdditions#examples-1)
+#### [API](https://github.com/PodFactory/SHTestCaseAdditions#api-1)
 
 
 
