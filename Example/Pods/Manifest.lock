@@ -1,0 +1,20 @@
+PODS:
+  - SHFastEnumerationProtocols (1.1.0)
+  - SHKeyValueObserverBlocks (1.0.0)
+  - SHTestCaseAdditions (1.0.0)
+
+DEPENDENCIES:
+  - SHFastEnumerationProtocols
+  - SHKeyValueObserverBlocks
+  - SHTestCaseAdditions (from `../`)
+
+EXTERNAL SOURCES:
+  SHTestCaseAdditions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SHFastEnumerationProtocols: 1f273326e9b38c5998db98de1b30a54792978b6c
+  SHKeyValueObserverBlocks: 91859c576426ff95d7bc416c61a16f0c87bba927
+  SHTestCaseAdditions: 36aff11e52441c2d2dadf6869b08acafa536805d
+
+COCOAPODS: 0.22.3
