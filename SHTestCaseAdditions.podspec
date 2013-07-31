@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   source_files   = "#{name}/**/*.{h,m}"
 
   s.version      = version
-  s.summary      = "Prefixed category on SenTestCase and XCTestCase to help with asynchronous callbacks"
+  s.summary      = "Prefixed category on SenTestCase and XCTestCase to help with asynchronous callbacks."
   s.description  = <<-DESC
   
   SHTestCaseAdditions contains asynchronous helpers (as a prefixed category) to write tests in SentTest and/or XCTest for delayed callbacks, 
