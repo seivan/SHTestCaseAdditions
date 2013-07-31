@@ -33,7 +33,7 @@
 }
 
 -(void)testSH_runLoopUntilTestPassesWithBlock_withTimeOut; {
-  NSString * keyPath = @"sampleSet";
+  NSString * keyPath   = @"sampleSet";
   __block BOOL didPass = NO;
 
   [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
@@ -57,12 +57,13 @@
 }
 
 -(void)testSH_performAsyncTestsWithinBlock_withTimeout; {
-  NSString * keyPath = @"sampleArray";
+  NSString * keyPath   = @"sampleArray";
   __block BOOL didPass = NO;
+
   [self SH_performAsyncTestsWithinBlock:^(BOOL *didFinish) {
     
     [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
-      didPass = YES;
+      didPass    = YES;
       *didFinish = YES;
     }];
     
