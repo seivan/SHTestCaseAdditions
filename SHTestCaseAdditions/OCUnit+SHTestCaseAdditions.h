@@ -3,7 +3,6 @@
 
 
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 70000 || __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
-
 @interface XCTestCase (SHTestCaseAdditions)
 #else
 #import <SenTestingKit/SenTestingKit.h>
@@ -12,8 +11,7 @@
 
 
 #pragma mark -
-#pragma mark Block Def
-
+#pragma mark Block Definitions
 typedef BOOL (^SHTestCaseConditional)();
 typedef void (^SHTestCaseBlock)(BOOL *didFinish);
 

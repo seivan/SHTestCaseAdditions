@@ -7,13 +7,17 @@ Pod::Spec.new do |s|
   source_files   = "#{name}/**/*.{h,m}"
 
   s.version      = version
-  s.summary      = "Asynchronous test helpers for SenTest and XCTest"
+  s.summary      = "Prefixed Asynchronous test helpers as a category on SenTestCase and XCTestCase"
   s.description  = <<-DESC
+  
+  SHTestCaseAdditions contains asynchronous helpers (as a prefixed category) to write tests in SentTest and/or XCTest for delayed callbacks, 
+  like network calls or alert views, action sheets. Prefixed category on SenTestCase and XCTestCase
 
                     * Swizzle and junk free
                     * Prefixed selectors.
                     * Works with both SentTest and/or XCTest
-                    * For iOS and Mac OS 
+                    * For iOS and Mac OS
+                    * Comes with tests and example. 
                     
                     DESC
 
