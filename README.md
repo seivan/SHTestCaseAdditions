@@ -17,7 +17,7 @@ Prefixed Asynchronous test helpers as a category on SenTestCase and XCTestCase
 
 Navigation
 ----------
-#### [USAGE](https://github.com/seivan/SHTestCaseAdditions#usage-1)
+#### [Usage](https://github.com/seivan/SHTestCaseAdditions#usage-1)
 #### [API](https://github.com/seivan/SHTestCaseAdditions#api-1)
 
 
@@ -44,7 +44,7 @@ or
 #import "SHTestCaseAdditions.h"
 ```
 
-USAGE
+Usage
 -----
 
 ```objective-c
