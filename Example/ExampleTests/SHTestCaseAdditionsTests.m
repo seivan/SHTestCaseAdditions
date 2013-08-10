@@ -52,7 +52,11 @@
   } withTimeOut:5];
   
   
-  STAssertTrue(didPass, nil);
+  #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 70000 || __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
+    XCTAssertTrue(didPass, nil);
+  #else
+    STAssertTrue(didPass, nil);
+  #endif
   
 }
 
@@ -77,6 +81,12 @@
   
   STAssertTrue(didPass, nil);
   
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 70000 || __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
+  XCTAssertTrue(didPass, nil);
+#else
+  STAssertTrue(didPass, nil);
+#endif
+
 }
 
 @end
