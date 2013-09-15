@@ -32,6 +32,19 @@
   [super tearDown];
 }
 
+-(void)testSH_waitForTimeInterval; {
+  __block BOOL assertion = NO;
+  
+  double delayInSeconds = 5.0;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    assertion = YES;
+  });
+  
+  [self SH_waitForTimeInterval:delayInSeconds];
+  STAssertTrue(assertion, nil);
+}
+
 -(void)testSH_runLoopUntilTestPassesWithBlock_withTimeOut; {
   NSString * keyPath   = @"sampleSet";
   __block BOOL didPass = NO;

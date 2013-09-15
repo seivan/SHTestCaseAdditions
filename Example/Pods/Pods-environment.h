@@ -9,12 +9,12 @@
 // SHFastEnumerationProtocols
 #define COCOAPODS_POD_AVAILABLE_SHFastEnumerationProtocols
 #define COCOAPODS_VERSION_MAJOR_SHFastEnumerationProtocols 1
-#define COCOAPODS_VERSION_MINOR_SHFastEnumerationProtocols 1
+#define COCOAPODS_VERSION_MINOR_SHFastEnumerationProtocols 3
 #define COCOAPODS_VERSION_PATCH_SHFastEnumerationProtocols 0
 
 // SHKeyValueObserverBlocks
 #define COCOAPODS_POD_AVAILABLE_SHKeyValueObserverBlocks
 #define COCOAPODS_VERSION_MAJOR_SHKeyValueObserverBlocks 1
-#define COCOAPODS_VERSION_MINOR_SHKeyValueObserverBlocks 0
+#define COCOAPODS_VERSION_MINOR_SHKeyValueObserverBlocks 1
 #define COCOAPODS_VERSION_PATCH_SHKeyValueObserverBlocks 0
 
