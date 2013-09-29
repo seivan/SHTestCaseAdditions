@@ -34,8 +34,11 @@
     [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
   }
   
-  STAssertTrue(currentTime <= timeoutTime, @"Timed out");
-  
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 70000 || __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
+    XCTAssertTrue(currentTime <= timeoutTime, @"Timed out");
+#else
+    STAssertTrue(currentTime <= timeoutTime, @"Timed out");
+#endif
 }
 
 -(void)SH_performAsyncTestsWithinBlock:(SHTestCaseBlock)theBlock withTimeout:(NSTimeInterval)theTimeout; {
@@ -57,7 +60,11 @@
     
   }
   
-  STAssertTrue(currentTime <= timeoutSeconds, @"Timed out");
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 70000 || __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
+    XCTAssertTrue(currentTime <= timeoutSeconds, @"Timed out");
+#else
+    STAssertTrue(currentTime <= timeoutSeconds, @"Timed out");
+#endif
 }
 
 
