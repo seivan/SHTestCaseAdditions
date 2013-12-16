@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
   name           = "SHTestCaseAdditions"
   url            = "https://github.com/seivan/#{name}"
   git_url        = "#{url}.git"
-  version        = "1.2.1"
+  version        = "1.3.0"
   source_files   = "#{name}/*.{h,m}"
   
   s.name         = name
   s.version      = version
-  s.summary      = "Prefixed category on SenTestCase and XCTestCase to help with asynchronous callbacks."
+  s.summary      = "Prefixed category on SenTestCase and XCTestCase to help with asynchronous callbacks. SenTestKit: SHTestCaseAdditions/SenTestCase"
   s.description  = <<-DESC
   
   SHTestCaseAdditions contains asynchronous helpers (as a prefixed category) to write tests in SentTest and/or XCTest for delayed callbacks, 

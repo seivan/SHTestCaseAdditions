@@ -1,4 +1,4 @@
 language: objective-c
 before_install:
   - gem install xcpretty
-script: xcodebuild -workspace Sample/Sample.xcworkspace -scheme LibraryTests test | xcpretty -c
+script: xcodebuild -workspace TestsAndSample/Sample.xcworkspace -scheme Tests test | xcpretty -c

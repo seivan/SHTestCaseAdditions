@@ -9,6 +9,6 @@
 // SHTestCaseAdditions/SenTestingKit
 #define COCOAPODS_POD_AVAILABLE_SHTestCaseAdditions_SenTestingKit
 #define COCOAPODS_VERSION_MAJOR_SHTestCaseAdditions_SenTestingKit 1
-#define COCOAPODS_VERSION_MINOR_SHTestCaseAdditions_SenTestingKit 2
-#define COCOAPODS_VERSION_PATCH_SHTestCaseAdditions_SenTestingKit 1
+#define COCOAPODS_VERSION_MINOR_SHTestCaseAdditions_SenTestingKit 3
+#define COCOAPODS_VERSION_PATCH_SHTestCaseAdditions_SenTestingKit 0
 
