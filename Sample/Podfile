@@ -1,0 +1,8 @@
+
+target :SenTestingKitTests, :exlusive => true do
+  pod 'SHTestCaseAdditions', :path => "../"
+end
+
+target :XCTestTests, :exlusive => true do
+  pod 'SHTestCaseAdditions/SenTestingKit', :path => "../"
+end
