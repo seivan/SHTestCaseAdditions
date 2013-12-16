@@ -1,0 +1,1 @@
+../../../../SHTestCaseAdditions/SenTestingKit/SenTestCase+SHTestCaseAdditions.h

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>14733325-0534-408C-AAE0-834F8220F29A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Sample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D3843937-04DB-46AA-B51B-9C5C72241C44</key>
+		<string>ssh://github.com/seivan/SHTestCaseAdditions.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Sample/Sample.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D3843937-04DB-46AA-B51B-9C5C72241C44</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/seivan/SHTestCaseAdditions.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D3843937-04DB-46AA-B51B-9C5C72241C44</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D3843937-04DB-46AA-B51B-9C5C72241C44</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SHTestCaseAdditions</string>
+		</dict>
+	</array>
+</dict>
+</plist>

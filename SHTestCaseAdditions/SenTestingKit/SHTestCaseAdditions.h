@@ -1,0 +1,1 @@
+#import "SenTestCase+SHTestCaseAdditions.h"
