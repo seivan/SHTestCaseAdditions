@@ -93,7 +93,6 @@
   
   XCTAssertTrue(didPass);
   
-  XCTAssertTrue(didPass);
   
   
 }
