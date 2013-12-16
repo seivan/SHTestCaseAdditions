@@ -1,3 +1,2 @@
 language: objective-c
-xcode_workspace: Sample/Sample.xcworkspace
-xcode_scheme: LibraryTests
+script: xcodebuild -workspace Sample/Sample.xcworkspace -scheme LibraryTests test
