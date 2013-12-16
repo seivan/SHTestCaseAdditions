@@ -1,8 +1,12 @@
 
-target :SenTestingKitTests, :exlusive => true do
-  pod 'SHTestCaseAdditions', :path => "../"
+
+pod 'SHKeyValueObserverBlocks'
+pod 'SHFastEnumerationProtocols'
+
+target :SenTestingKitTests, :exclusive => true do
+  pod 'SHTestCaseAdditions/SenTestingKit', :path => "../"
 end
 
-target :XCTestTests, :exlusive => true do
-  pod 'SHTestCaseAdditions/SenTestingKit', :path => "../"
+target :XCTestTests, :exclusive => true do
+  pod 'SHTestCaseAdditions', :path => "../"
 end
