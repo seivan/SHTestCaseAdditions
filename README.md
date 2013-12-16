@@ -25,9 +25,21 @@ Navigation
 Installation
 ------------
 
+Default is for XCTest
+
 ```ruby
 pod 'SHTestCaseAdditions'
 ```
+
+```ruby
+pod 'SHTestCaseAdditions/XCTest'
+```
+
+For SenTestKit
+```ruby
+pod 'SHTestCaseAdditions/SenTestKit'
+```
+
 
 ***
 
@@ -36,10 +48,18 @@ Setup
 
 Put this either in specific files or your project prefix file
 
+XCTestCase
 ```objective-c
-#import "OCUnit+SHTestCaseAdditions.h"
+#import <XCTestCase+SHTestCaseAdditions.h>
 ```
+
+SenTestKit
+```objective-c
+#import <SenTestCase+SHTestCaseAdditions.h>
+```
+
 or 
+
 ```objective-c
 #import "SHTestCaseAdditions.h"
 ```
@@ -84,40 +104,41 @@ Usage
   });
   
   [self SH_waitForTimeInterval:delayInSeconds];
-  STAssertTrue(assertion, nil);
+  XCTAssertTrue(assertion);
 }
 
 -(void)testSH_runLoopUntilTestPassesWithBlock_withTimeOut; {
-  NSString * keyPath = @"sampleSet";
+  NSString * keyPath   = @"sampleSet";
   __block BOOL didPass = NO;
-
-  [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
+  
+  [self SH_addObserverForKeyPaths:@[keyPath] withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
     didPass = YES;
   }];
-
+  
   double delayInSeconds = 2;
   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    [[self mutableSetValueForKey:keyPath] addObject:@"Lol"];
+    [[self mutableArrayValueForKey:keyPath] addObject:@"Lol"];
   });
-
+  
   
   [self SH_runLoopUntilTestPassesWithBlock:^BOOL{
     return didPass;
   } withTimeOut:5];
   
   
-  STAssertTrue(didPass, nil);
+  XCTAssertTrue(didPass);
   
 }
 
 -(void)testSH_performAsyncTestsWithinBlock_withTimeout; {
-  NSString * keyPath = @"sampleArray";
+  NSString * keyPath   = @"sampleArray";
   __block BOOL didPass = NO;
+  
   [self SH_performAsyncTestsWithinBlock:^(BOOL *didFinish) {
     
-    [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
-      didPass = YES;
+    [self SH_addObserverForKeyPaths:@[keyPath] withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
+      didPass    = YES;
       *didFinish = YES;
     }];
     
@@ -129,9 +150,12 @@ Usage
     
   } withTimeout:5];
   
-  STAssertTrue(didPass, nil);
+  XCTAssertTrue(didPass);
+  
+  
   
 }
+
 
 ```
 
