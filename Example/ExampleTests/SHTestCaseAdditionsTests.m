@@ -49,14 +49,14 @@
   NSString * keyPath   = @"sampleSet";
   __block BOOL didPass = NO;
 
-  [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
+  [self SH_addObserverForKeyPaths:@[keyPath] withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
     didPass = YES;
   }];
 
   double delayInSeconds = 2;
   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    [[self mutableSetValueForKey:keyPath] addObject:@"Lol"];
+    [[self mutableArrayValueForKey:keyPath] addObject:@"Lol"];
   });
 
   
@@ -79,7 +79,7 @@
 
   [self SH_performAsyncTestsWithinBlock:^(BOOL *didFinish) {
     
-    [self SH_addObserverForKeyPaths:@[keyPath].SH_toSet withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
+    [self SH_addObserverForKeyPaths:@[keyPath] withOptions:0 block:^(id weakSelf, NSString *keyPath, NSDictionary *change) {
       didPass    = YES;
       *didFinish = YES;
     }];

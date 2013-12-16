@@ -27,10 +27,20 @@ Pod::Spec.new do |s|
   
   s.source       = { :git => git_url, :tag => version}
   
-  #s.weak_frameworks = ["XCTest", "SenTestingKit"]
-  s.frameworks    = ["SenTestingKit"]
+  xctest  = 'XCTest'
+  sentest = 'SenTestingKit'
 
-  s.source_files = source_files
+  s.subspec xctest do |xct|
+    xct.frameworks    = [xctest]
+    xct.source_files = "#{xctest}/#{source_files}"
+  end
+
+  s.subspec sentest do |sen|
+    sen.frameworks   = [sentest]
+    sen.source_files = "#{sentest}/#{source_files}"
+  end
+
+
   s.requires_arc = true
 
 
