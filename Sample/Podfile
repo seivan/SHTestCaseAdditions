@@ -1,0 +1,12 @@
+
+
+pod 'SHKeyValueObserverBlocks'
+pod 'SHFastEnumerationProtocols'
+
+target :SenTestingKitTests, :exclusive => true do
+  pod 'SHTestCaseAdditions/SenTestingKit', :path => "../"
+end
+
+target :XCTestTests, :exclusive => true do
+  pod 'SHTestCaseAdditions', :path => "../"
+end
